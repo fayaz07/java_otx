@@ -10,7 +10,7 @@ interface Stack <Item>
     int size();  
 }
 
-public class ArrayStack <Item> implements Stack <Item>
+class ArrayStack <Item> implements Stack <Item>
 {
     private Item container[];
     private int top;
@@ -98,4 +98,25 @@ public class ArrayStack <Item> implements Stack <Item>
            // not needed
         }
     }
+}
+
+public class StackGenerics
+{
+  public static void main (String a[])
+  {
+    Stack <Integer> s = new ArrayStack<Integer>();
+    s.push(20);
+    s.push(30);
+    s.push(40);
+    s.push(50);
+    s.push(60);
+    s.push(70);
+ 
+    System.out.println("Size of the stack: " + s.size());
+ 
+    // iterate through stack
+    System.out.println("Following items pushed to Stack as of now:");
+    for (Integer i : s)
+      System.out.println(i);	
+  }
 }
